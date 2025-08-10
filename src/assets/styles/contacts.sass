@@ -1,0 +1,74 @@
+@use './_variables' as *
+
+.contact
+    display: flex
+    flex-direction: column
+    width: 900px
+    gap: 15px
+
+.divider-line
+    background: linear-gradient(90deg, #a5386000, $softest-pink, #a5386000);
+    height: 1px
+    width: stretch
+    animation: showup 0.5s
+
+.contact-info
+    display: flex
+    flex-direction: column
+    color: $softest-pink
+    gap: 10px
+    animation: showup 0.5s
+    .head
+        font-size: 2rem
+        font-weight: 900
+        letter-spacing: 0.1em
+    .sub
+        font-size: 1.25rem
+        font-weight: 500
+        letter-spacing: 0.08em
+
+.contact-link
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: center
+    height: 25px
+    gap: 15px
+    animation: showup 0.5s
+    .link-info
+        color: $softest-pink
+        font-size: 1.2rem
+        font-weight: 600
+        text-decoration: none
+        &:hover
+            color: $pink-accent
+            text-decoration: underline
+    .dial:hover
+        text-decoration: none !important
+    svg
+        width: 30px
+        height: 30px
+        display: block
+        fill: $softest-pink
+    .divider
+        width: 6px
+        height: 6px
+        background-color: $softest-pink
+        border-radius: 100%
+        opacity: 0.5
+        
+.copied-msg
+    margin-left: 10px
+    background: $pink-accent
+    color: $softest-pink 
+    text-decoration: none !important
+    display: inline-block
+    font-size: 1rem
+    font-weight: 600
+
+
+@media (max-width: 960px)
+    .contact
+        width: 100%
+    .contact-info, .contact-link, .contact-info
+        margin: 0 30px    

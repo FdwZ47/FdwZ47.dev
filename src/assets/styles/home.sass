@@ -1,0 +1,79 @@
+@use './_variables' as *
+
+
+.logo 
+    display: flex
+    justify-content: center
+    svg 
+        filter: drop-shadow(0 0 10px $softest-pink)   
+        path 
+            stroke-width: 0.6
+            stroke-dasharray: 200
+            stroke-dashoffset: 50
+            animation: draw 4s ease-in-out 1 forwards; 
+            fill: tranparent
+            stroke: $softest-pink
+
+.home 
+    @extend %centerit
+    gap: 10px
+    justify-content: center
+
+
+.content
+    @extend %centerit
+    color: $softest-pink
+    gap: 5px
+    text-align: center
+    animation: showup 0.5s
+    .head
+        font-weight: 900
+        font-size: 2rem
+        letter-spacing: 0.1em
+    .sub
+        font-weight: 500
+        font-size: 1.5rem
+        letter-spacing: 0.07em
+     
+.Icons
+    display: flex
+    gap: 30px
+    flex-wrap: wrap
+
+.icon-link
+    display: inline-block
+    padding: 0 !important
+    margin: 0 !important
+    animation: showup 0.5s
+    svg
+        opacity: 0.6
+        width: 45px
+        height: 45px
+        display: block
+        fill: $pink-accent
+        animation: loose 6s linear infinite
+        &:hover
+            filter: drop-shadow(0 0 5px $softest-pink)
+            fill: $softest-pink
+            opacity: 1
+        
+@keyframes loose
+    0%
+        transform: rotate(0)
+    25%
+        transform: rotate(8deg)
+    50%
+        transform: rotate(0)
+    75%
+        transform: rotate(-8deg)
+    100%
+        transform: rotate(0)
+        
+@media ( max-width: 960px )
+    .home
+        width: 100%
+
+@media ( max-width: 560px )
+    .home .content, .home .icons
+        margin: 0 30px
+    
