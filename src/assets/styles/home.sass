@@ -10,9 +10,11 @@
             stroke-width: 0.6
             stroke-dasharray: 200
             stroke-dashoffset: 50
-            animation: draw 4s ease-in-out 1 forwards; 
+            animation: draw 4s ease-in-out 1 forwards
             fill: tranparent
             stroke: $softest-pink
+            will-change: stroke-dashoffset, fill
+            transform: translateZ(0)
 
 .home 
     @extend %centerit
