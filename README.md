@@ -1,3 +1,3 @@
-# FdwZ47.dev
+# FdwZ47.ink
 
 My personal portfolio
