@@ -9,12 +9,12 @@
         path 
             stroke-width: 0.6
             stroke-dasharray: 200
-            stroke-dashoffset: 50
-            animation: draw 4s ease-in-out 1 forwards
-            fill: tranparent
+            stroke-dashoffset: 200
+            animation: draw 4s ease-in-out 1 forwards, fillin 1s ease-in-out 2s forwards
+            fill: transparent
             stroke: $softest-pink
-            will-change: stroke-dashoffset, fill
-            transform: translateZ(0)
+            stroke-linecap: round
+            transform-origin: center
 
 .home 
     @extend %centerit

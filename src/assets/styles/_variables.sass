@@ -9,19 +9,18 @@ $softest-pink:#EF88AD
     flex-direction: column
     align-items: center
 
-@keyframes draw 
+@keyframes draw
     0%
         stroke-dashoffset: 200
+    100%
+        stroke-dashoffset: 0
+
+@keyframes fillin
+    0%
         fill: transparent
-    80%
-        fill: tranparent
-           
-    90%
-        fill: $softest-pink
     100%
         fill: $softest-pink
-        stroke-dashoffset: 0  
-
+        
 @keyframes waves 
   0% 
     background-position-x: 1000px 
