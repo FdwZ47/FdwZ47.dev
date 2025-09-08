@@ -1,17 +1,103 @@
-@use '_variables' as *
+@use './_variables' as *
 
-.project-content
-    @extend %centerit
-    color: $softest-pink
-    text-align: center
-    gap: 10px
-    animation: showup 0.5s
-    .head
-        font-weight: 900
-        font-size: 2rem
-        letter-spacing: 0.1em
-    .sub
-        font-weight: 500
-        font-size: 1.5rem
-        letter-spacing: 0.07em
+.timeline-wrapper
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
 
+.timeline-list
+  display: flex
+  justify-content: center
+  gap: 1rem
+  color: $soft-pink
+  list-style: none
+  font-weight: 600
+  padding: 0
+  margin-bottom: 1rem
+  animation: showup 0.5s
+  li
+    cursor: default
+    span
+      display: block
+      font-weight: 500
+      transition: all 0.3s
+    &.active span
+      font-weight: 800
+      color: $softest-pink
+      &:after
+        content: ''
+        display: block
+        width: 12px
+        height: 12px
+        background: $softest-pink
+        border-radius: 50%
+        margin: 0.25rem auto
+
+.swiper-timeline
+  animation: showup 0.5s
+  width: 100%
+  height: auto
+  padding: 1rem 0
+  .swiper-slide
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    height: auto
+    .project-card
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin: 1rem 0 1rem 0 
+      width: 280px
+      max-width: 90%
+      padding: 1.5rem
+      background: $softest-pink
+      border-radius: 16px
+      box-shadow: 0 0 10px 4px $softest-pink
+      cursor: grab
+      text-align: center
+      img
+        width: 100%
+        border-radius: 12px
+        margin-bottom: .5rem
+        box-shadow: 0 0 6px 4px $soft-pink
+      h3
+        font-size: 1.2rem
+        font-weight: 700
+        color: $hard-pink
+        margin-bottom: 0.5rem
+      p
+        font-size: 0.95rem
+        color: $hard-pink
+        font-weight: 600
+        line-height: 1.4rem
+        margin-bottom: 1rem
+      .project-btn
+        padding: 0.5rem 1rem
+        border-radius: 8px
+        background-color: $hard-pink
+        color: $softest-pink
+        font-weight: 600
+        text-decoration: none
+        transition: background 0.2s
+        &:hover
+          background-color: $soft-pink
+
+@media (max-width: 768px)
+  .swiper-timeline
+    .swiper-slide
+      .project-card
+        width: 220px
+        padding: 1rem
+
+
+@media (max-width: 450px)
+  .timeline-list
+    display: flex
+    gap: .7rem
+    font-size: .8rem
