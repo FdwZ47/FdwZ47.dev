@@ -56,7 +56,7 @@ onUnmounted(() => {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: -1; /* Stays behind content */
+  z-index: -1; 
 }
 
 .light-dot {
@@ -75,7 +75,7 @@ onUnmounted(() => {
   background: rgba(165, 56, 96, 0.604);
   opacity: var(--opacity);
   box-shadow: 0 0 30px 15px rgba(165, 56, 96, 0.704);
-  mix-blend-mode: screen; /* Glow shows through dark text */
-  transition: all 0.2s ease; /* Smooth brightness/size change */
+  mix-blend-mode: screen; 
+  transition: all 0.2s ease; 
 }
 </style>
