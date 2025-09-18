@@ -9,25 +9,25 @@ const projects = [
     { 
     title: "Utilities Bot", 
     description: "Versatile Discord bot with moderation and utility commands", 
-    date: "2021 May", image: "/utibot.png", link: "https://github.com/FdwZ47/utilities-Bot" 
+    date: "2021 May", image: "/utibot.png", avif: "/utibot.avif", link: "https://github.com/FdwZ47/utilities-Bot" 
       },
 
     { 
     title: "Lorik", 
     description: "Simple customizable cold theme for BetterDiscord", 
-    date: "2021 July", image: "/lorik.png", link: "https://github.com/FdwZ47/Lorik" 
+    date: "2021 July", image: "/lorik.png", avif: "/lorik.avif", link: "https://github.com/FdwZ47/Lorik" 
       },
 
     {
     title: "Rem(Re:Zero)", 
     description: "A fan-made Re:Zero-inspired BetterDiscord theme featuring Rem’s colors and style", 
-    date: "2021 Oct", image: "/rem.png", link: "https://github.com/FdwZ47/Rem" 
+    date: "2021 Oct", image: "/rem.png", avif: "/rem.avif", link: "https://github.com/FdwZ47/Rem" 
       },
 
     { 
     title: "UoN Cafe", 
     description: "Fully responsive, modern website for University of Nizwa students, built with Nuxt 4", 
-    date: "2025 Sept", image: "/uoncafe.png", link: "https://uoncafe.org/" 
+    date: "2025 Sept", image: "/uoncafe.png", avif: "/uoncafe.avif", link: "https://uoncafe.org/" 
       },
 
 ];
@@ -73,10 +73,18 @@ const onSlideChange = (swiper) => {
 >
   <SwiperSlide v-for="(p, i) in projects" :key="i">
     <div class="project-card">
-      <img :src="p.image" alt="project preview" />
+
+      <picture>
+        <source :srcset="p.avif" type="image/avif">
+        <img :src="p.image" alt="project preview" />
+      </picture>
+      
       <h3>{{ p.title }}</h3>
+
       <p>{{ p.description }}</p>
+
       <a v-if="p.link" :href="p.link" target="_blank" class="project-btn">View Project</a>
+
     </div>
   </SwiperSlide>
 </Swiper>
