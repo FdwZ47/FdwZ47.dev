@@ -30,6 +30,12 @@ const projects = [
     date: "2025 Sept", image: "/uoncafe.png", avif: "/uoncafe.avif", link: "https://uoncafe.org/" 
       },
 
+    { 
+    title: "PaletteSpy", 
+    description: "A Chrome extension that lets you inspect and save color palettes and fonts", 
+    date: "2025 Oct", image: "/palettespy.png", avif: "/palettespy.avif", link: "https://github.com/FdwZ47/PaletteSpy" 
+      },
+
 ];
 
 const activeIndex = ref(0);

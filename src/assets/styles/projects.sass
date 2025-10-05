@@ -81,13 +81,17 @@
       .project-btn
         padding: 0.5rem 1rem
         border-radius: 8px
-        background-color: $hard-pink
+        border-color: $hard-pink
+        background-color: $soft-pink
         color: $softest-pink
         font-weight: 600
         text-decoration: none
-        transition: background 0.2s
+        box-shadow: .2em .2em $hard-pink
+        transition: all .2s ease
         &:hover
-          background-color: $soft-pink
+          border: 3px solid $hard-pink
+        &:is(:active, :focus)
+          scale: .95
 
 @media (max-width: 768px)
   .swiper-timeline
@@ -101,4 +105,4 @@
   .timeline-list
     display: flex
     gap: .7rem
-    font-size: .8rem
+    font-size: .7rem
