@@ -1,7 +1,7 @@
 
 <template>
     <div class="NF">
-    <a class="head">404</a>
-    <a class="sub">IDK what you're looking for, but it ain't here 💀</a>
+    <strong class="head">404</strong>
+    <p class="sub">IDK what you're looking for, but it ain't here 💀</p>
     </div>
 </template>

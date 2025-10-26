@@ -1,6 +1,6 @@
+@use './styles/_variables' as *
 @use './styles/navbar'
 @use './fonts/montserrat'
-@use './styles/_variables' as *
 @use './styles/contacts'
 @use './styles/home'
 @use './styles/projects'
@@ -13,7 +13,8 @@ body, html
     margin: 0
     padding: 0
     background-color: $hard-pink
-    
+    -webkit-tap-highlight-color: transparent
+
 ::selection
     background-color: $softest-pink
     color: $hard-pink
@@ -101,5 +102,3 @@ body, html
     opacity: 0.2
     bottom: 25px
     z-index: -1000
-    
-
