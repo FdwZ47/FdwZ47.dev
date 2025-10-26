@@ -10,17 +10,15 @@ import Manaflow from './components/extensions/manaflow.vue';
 
 <template>
 
-     <div class="container grain">
-         <light/>
- 
-         <RouterView/>
-        
+<div class="container grain">
+      <light/>
+        <RouterView/>
     </div>
     
     <div class="background"></div>
   
-          <navbar />     
-                <Manaflow/>
+          <navbar />    
+      <Manaflow/>
 
 </template>
 

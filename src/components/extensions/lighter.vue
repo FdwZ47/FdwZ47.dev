@@ -50,32 +50,30 @@ onUnmounted(() => {
 
 </template>
 
+<style scoped lang="sass">
+.light-wrapper 
+  position: fixed
+  inset: 0
+  pointer-events: none
+  z-index: -1
 
-<style scoped>
-.light-wrapper {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1; 
-}
 
-.light-dot {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  transform: translate(-50%, -50%);
-}
+.light-dot 
+  position: absolute
+  width: 25px
+  height: 25px
+  transform: translate(-50%, -50%)
 
-.light-dot::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: rgba(165, 56, 96, 0.604);
-  opacity: var(--opacity);
-  box-shadow: 0 0 30px 15px rgba(165, 56, 96, 0.704);
-  mix-blend-mode: screen; 
-  transition: all 0.2s ease; 
-}
+
+.light-dot::before 
+  content: ''
+  position: absolute
+  width: 100%
+  height: 100%
+  border-radius: 50%
+  background: rgba(165, 56, 96, 0.604)
+  opacity: var(--opacity)
+  box-shadow: 0 0 30px 15px rgba(165, 56, 96, 0.704)
+  mix-blend-mode: screen
+  transition: all 0.2s ease
 </style>

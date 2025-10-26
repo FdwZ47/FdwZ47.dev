@@ -1,7 +1,6 @@
 
 <template>
 
-
     <div class="wave-con">
   <div class="waves">
     <div class="wave" id="wave1"></div>
