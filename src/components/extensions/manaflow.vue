@@ -39,6 +39,12 @@ const wavePaths = ref<string[]>(waveLayers.map(() => ''))
 const starRings = Array.from({ length: 15 }, (_, index) => (index + 1) * 3.5)
 const starMaskId = `star-trails-mask-${Math.random().toString(36).slice(2)}`
 
+const fixedSize = 2400
+const starTrailsStyle = {
+  width: `${fixedSize}px`,
+  height: `${fixedSize}px`,
+}
+
 let elapsed = 0
 let lastTime = 0
 
@@ -106,7 +112,7 @@ onUnmounted(() => {
 
 <template>
   <div class="manaflow-root" aria-hidden="true">
-    <div class="star-trails">
+    <div class="star-trails" :style="starTrailsStyle">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
         <defs>
           <mask :id="starMaskId">
@@ -160,8 +166,6 @@ onUnmounted(() => {
   position: fixed
   bottom: 0
   left: 50%
-  width: max(150vw, 150vh)
-  height: max(150vw, 150vh)
   transform: translate(-50%, 50%) translateZ(0)
   display: flex
   justify-content: center
