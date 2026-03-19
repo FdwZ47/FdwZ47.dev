@@ -41,7 +41,7 @@ const opacity = computed(() => {
   position: fixed
   inset: 0
   pointer-events: none
-  z-index: 5
+  z-index: -10000
 
 .light-dot
   position: absolute
