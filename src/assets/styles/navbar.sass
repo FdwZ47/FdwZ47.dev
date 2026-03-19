@@ -1,13 +1,12 @@
 @use './_variables' as *
 
-
 .navbar-container
-    padding: 40px 125px
+    padding: $space-xl $space-2xl
     display: flex
     position: sticky
     justify-content: center
     top: 0
-    gap: 25px
+    gap: $space-lg
     z-index: 1100
 
 .menu
@@ -15,11 +14,11 @@
     flex-direction: row
     justify-content: center
     align-items: center
-    gap: 30px
+    gap: $space-lg
     .menulink
         font-weight: bold
-        color: $softest-pink
-        font-size: 1.25rem
+        color: $text-base
+        font-size: $font-md
         text-decoration: none
         display: flex
         align-items: center
@@ -30,11 +29,11 @@
             content: ''
             display: block
             position: absolute
-            background: $softest-pink
-            bottom: -10px
-            width: 5px
-            height: 5px
-            border-radius: 6px
+            background: $text-base
+            bottom: -0.5rem
+            width: 0.3rem
+            height: 0.3rem
+            border-radius: 0.375rem
             transition: all 0.15s linear
             opacity: 0
         &:hover::after
@@ -43,18 +42,19 @@
             width: 100%
             opacity: 1
     .divider
-        width: 6px
-        height: 6px
-        background-color: $softest-pink
+        width: 0.375rem
+        height: 0.375rem
+        background-color: $lighter-sea
         border-radius: 100%
-        opacity: 0.6
 
-@media ( max-width: 560px )
+@media (max-width: $bp-md)
+    .navbar-container
+        padding: $space-md $space-lg
     .menu
-        gap: 20px
-    
-@media ( max-width: 350px )
+        gap: $space-md
+
+@media (max-width: $bp-sm)
     .menu
-        gap: 10px
-    
-    
+        gap: $space-sm
+        .menulink
+            font-size: $font-sm

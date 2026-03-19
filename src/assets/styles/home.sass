@@ -1,46 +1,49 @@
 @use './_variables' as *
 
-
-.logo 
+.logo
     display: flex
     justify-content: center
-    svg 
-        filter: drop-shadow(0 0 10px $softest-pink)   
-        path 
+    svg
+        width: clamp(250px, 40vw, 433px)
+        height: auto
+        filter: drop-shadow(0 0 0.625rem $text-base)
+        path
             stroke-width: 0.6
             stroke-dasharray: 200
             stroke-dashoffset: 200
             animation: draw 4s ease-in-out 1 forwards, fillin 1s ease-in-out 2s forwards
             fill: transparent
-            stroke: $softest-pink
+            stroke: $text-base
             stroke-linecap: round
             transform-origin: center
 
-.home 
+.home
     @extend %centerit
-    gap: 10px
+    gap: $space-md
     justify-content: center
-
+    padding: 0 $space-lg
+    max-width: 100%
 
 .content
     @extend %centerit
-    color: $softest-pink
-    gap: 5px
+    color: $text-base
+    gap: $space-xs
     text-align: center
     animation: showup 0.5s
     .head
         font-weight: 900
-        font-size: 2rem
+        font-size: $font-xl
         letter-spacing: 0.1em
     .sub
         font-weight: 500
-        font-size: 1.5rem
+        font-size: $font-lg
         letter-spacing: 0.07em
-     
+
 .Icons
     display: flex
-    gap: 30px
+    gap: $space-lg
     flex-wrap: wrap
+    justify-content: center
 
 .icon-link
     display: inline-block
@@ -48,17 +51,18 @@
     margin: 0 !important
     animation: showup 0.5s
     svg
-        opacity: 0.6
-        width: 45px
-        height: 45px
+        opacity: 0.25
+        width: $icon-md
+        height: $icon-md
         display: block
-        fill: $pink-accent
+        fill: $text-base
         animation: loose 6s linear infinite
+        transition: all 0.2s ease
         &:hover
-            filter: drop-shadow(0 0 5px $softest-pink)
-            fill: $softest-pink
+            filter: drop-shadow(0 0 0.3rem $text-base)
+            fill: $text-base
             opacity: 1
-        
+
 @keyframes loose
     0%
         transform: rotate(0)
@@ -70,12 +74,9 @@
         transform: rotate(-8deg)
     100%
         transform: rotate(0)
-        
-@media ( max-width: 960px )
+
+@media (max-width: $bp-md)
     .home
         width: 100%
-
-@media ( max-width: 560px )
-    .home .content, .home .icons
-        margin: 0 30px
-    
+    .content .sub
+        font-size: $font-md

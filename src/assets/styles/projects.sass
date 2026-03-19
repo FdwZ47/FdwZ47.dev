@@ -1,108 +1,107 @@
 @use './_variables' as *
 
 .timeline-wrapper
-  position: relative
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  width: 100%
-  max-width: 1200px
-  margin: 0 auto
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    width: 100%
+    max-width: 75rem
+    margin: 0 auto
+    padding: 0 $space-md
 
 .timeline-list
-  display: flex
-  justify-content: center
-  gap: 1rem
-  color: $soft-pink
-  list-style: none
-  font-weight: 600
-  padding: 0
-  margin-bottom: 1rem
-  animation: showup 0.5s
-  li
-    cursor: default
-    span
-      display: block
-      font-weight: 500
-      transition: all 0.3s
-    &.active span
-      font-weight: 800
-      color: $softest-pink
-      &:after
-        content: ''
-        display: block
-        width: 12px
-        height: 12px
-        background: $softest-pink
-        border-radius: 50%
-        margin: 0.25rem auto
-        animation: pulse 3.4s ease-in-out infinite
-
-.swiper-timeline
-  animation: showup 0.5s
-  width: 100%
-  height: auto
-  padding: 1rem 0
-  .swiper-slide
     display: flex
     justify-content: center
-    align-items: flex-start
+    gap: $space-md
+    color: $dark-sea
+    list-style: none
+    font-weight: 600
+    padding: 0
+    margin-bottom: $space-md
+    animation: showup 0.5s
+    li
+        cursor: default
+        span
+            display: block
+            font-weight: 500
+            transition: all 0.3s
+        &.active span
+            font-weight: 800
+            color: $text-base
+            &:after
+                content: ''
+                display: block
+                width: 0.75rem
+                height: 0.75rem
+                background: $text-base
+                border-radius: 50%
+                margin: $space-xs auto
+                animation: pulse 3.4s ease-in-out infinite
+
+.swiper-timeline
+    animation: showup 0.5s
+    width: 100%
     height: auto
-    .project-card
-      display: flex
-      flex-direction: column
-      align-items: center
-      margin: 1rem 0 1rem 0 
-      width: 280px
-      max-width: 90%
-      padding: 1.5rem
-      background: $softest-pink
-      border-radius: 16px
-      box-shadow: 0 0 10px 4px $softest-pink
-      cursor: grab
-      text-align: center
-      img
-        width: 100%
-        border-radius: 12px
-        margin-bottom: .5rem
-        box-shadow: 0 0 6px 4px $soft-pink
-      h3
-        font-size: 1.2rem
-        font-weight: 700
-        color: $hard-pink
-        margin-bottom: 0.5rem
-      p
-        font-size: 0.95rem
-        color: $hard-pink
-        font-weight: 600
-        line-height: 1.4rem
-        margin-bottom: 1rem
-      .project-btn
-        padding: 0.5rem 1rem
-        border-radius: 8px
-        border-color: $hard-pink
-        background-color: $soft-pink
-        color: $softest-pink
-        font-weight: 600
-        text-decoration: none
-        box-shadow: .2em .2em $hard-pink
-        transition: all .2s ease
-        &:hover
-          border: 3px solid $hard-pink
-        &:is(:active, :focus)
-          scale: .95
-
-@media (max-width: 768px)
-  .swiper-timeline
+    padding: $space-md 0
     .swiper-slide
-      .project-card
-        width: 220px
-        padding: 1rem
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        height: auto
+        .project-card
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin: $space-md 0
+            width: clamp(200px, 80vw, 280px)
+            max-width: 90%
+            padding: $space-lg
+            background: $text-base
+            border-radius: 1rem
+            box-shadow: 0 0 0.625rem 0.25rem $text-base
+            cursor: grab
+            text-align: center
+            img
+                width: 100%
+                border-radius: 0.75rem
+                margin-bottom: $space-sm
+                box-shadow: 0 0 0.375rem 0.25rem $dark-sea
+            h3
+                font-size: $font-md
+                font-weight: 700
+                color: $midnight-sea
+                margin-bottom: $space-sm
+            p
+                font-size: $font-sm
+                color: $midnight-sea
+                font-weight: 600
+                line-height: 1.4
+                margin-bottom: $space-md
+            .project-btn
+                padding: $space-sm $space-md
+                border-radius: 0.5rem
+                border-color: $midnight-sea
+                background-color: $dark-sea
+                color: $text-base
+                font-weight: 600
+                text-decoration: none
+                box-shadow: 0.2em 0.2em $midnight-sea
+                transition: all 0.2s ease
+                &:hover
+                    border: 3px solid $midnight-sea
+                &:is(:active, :focus)
+                    scale: 0.95
 
+@media (max-width: $bp-md)
+    .swiper-timeline
+        .swiper-slide
+            .project-card
+                width: clamp(180px, 70vw, 220px)
+                padding: $space-md
 
-@media (max-width: 450px)
-  .timeline-list
-    display: flex
-    gap: .7rem
-    font-size: .7rem
+@media (max-width: $bp-sm)
+    .timeline-list
+        gap: $space-sm
+        font-size: $font-xs
