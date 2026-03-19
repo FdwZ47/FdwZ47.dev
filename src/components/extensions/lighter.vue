@@ -1,79 +1,62 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { computed } from 'vue'
+import { useMouse, useMousePressed, useEventListener } from '@vueuse/core'
+import { ref } from 'vue'
 
-const x = ref(0);
-const y = ref(0);
-const isMouseDown = ref(false);
+const { x, y } = useMouse({ type: 'client' })
+const { pressed } = useMousePressed()
+const isOutside = ref(true)
 
-const handleMouseMove = (e) => {
-  x.value = e.clientX;
-  y.value = e.clientY;
-};
+useEventListener(document, 'mouseenter', () => {
+  isOutside.value = false
+})
 
-const handleMouseDown = () => {
-  isMouseDown.value = true; 
-};
+useEventListener(document, 'mouseleave', () => {
+  isOutside.value = true
+})
 
-const handleMouseUp = () => {
-  isMouseDown.value = false; 
-};
-
-onMounted(() => {
-  window.addEventListener('mousemove', handleMouseMove);
-  window.addEventListener('mousedown', handleMouseDown); 
-  window.addEventListener('mouseup', handleMouseUp);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('mousemove', handleMouseMove);
-  window.removeEventListener('mousedown', handleMouseDown);
-  window.removeEventListener('mouseup', handleMouseUp);
-});
-
-
+const opacity = computed(() => {
+  if (isOutside.value) return 0
+  return pressed.value ? 0.9 : 0.5
+})
 </script>
 
 <template>
-
-
-      <div class="light-wrapper">
+  <div class="light-wrapper">
     <div
       class="light-dot"
       :style="{
         left: `${x}px`,
         top: `${y}px`,
-        '--opacity': isMouseDown ? 1 : 0.7, 
+        '--opacity': opacity,
       }"
     />
   </div>
-
-
 </template>
 
 <style scoped lang="sass">
-.light-wrapper 
+@use '@/assets/styles/_variables' as *
+
+.light-wrapper
   position: fixed
   inset: 0
   pointer-events: none
-  z-index: -1
+  z-index: 5
 
-
-.light-dot 
+.light-dot
   position: absolute
-  width: 25px
-  height: 25px
+  width: 1.875rem
+  height: 1.875rem
   transform: translate(-50%, -50%)
 
-
-.light-dot::before 
+.light-dot::before
   content: ''
   position: absolute
   width: 100%
   height: 100%
   border-radius: 50%
-  background: rgba(165, 56, 96, 0.604)
+  background: $lighter-sea
   opacity: var(--opacity)
-  box-shadow: 0 0 30px 15px rgba(165, 56, 96, 0.704)
-  mix-blend-mode: screen
-  transition: all 0.2s ease
+  box-shadow: 0 0 30px 15px $lighter-sea
+  transition: opacity 0.25s ease
 </style>

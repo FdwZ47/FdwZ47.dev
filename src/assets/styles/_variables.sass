@@ -1,8 +1,30 @@
+$midnight-sea: #090A11
+$dark-sea: #131624
+$lighter-sea: #2C3354
+$text-base: #CFD6F7
+$branding-accent: #9C91FC
 
-$hard-pink: #3A0519
-$soft-pink: #670D2F
-$pink-accent: #A53860
-$softest-pink: #EF88AD
+$space-xs: clamp(0.25rem, 0.5vw, 0.5rem)
+$space-sm: clamp(0.5rem, 1vw, 0.75rem)
+$space-md: clamp(0.75rem, 2vw, 1.5rem)
+$space-lg: clamp(1rem, 3vw, 2rem)
+$space-xl: clamp(1.5rem, 4vw, 3rem)
+$space-2xl: clamp(2rem, 6vw, 5rem)
+
+$font-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)
+$font-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem)
+$font-md: clamp(1rem, 0.9rem + 0.5vw, 1.25rem)
+$font-lg: clamp(1.25rem, 1rem + 0.75vw, 1.5rem)
+$font-xl: clamp(1.5rem, 1.2rem + 1vw, 2rem)
+
+$icon-sm: clamp(1.5rem, 1.25rem + 1vw, 2rem)
+$icon-md: clamp(2rem, 1.75rem + 1.25vw, 2.75rem)
+$icon-lg: clamp(2.5rem, 2rem + 1.5vw, 3.5rem)
+
+$bp-sm: 480px
+$bp-md: 768px
+$bp-lg: 960px
+$bp-xl: 1200px
 
 %centerit
     display: flex
@@ -19,7 +41,7 @@ $softest-pink: #EF88AD
     0%
         fill: transparent
     100%
-        fill: $softest-pink
+        fill: $text-base
         
 @keyframes waves 
   0% 
@@ -61,12 +83,12 @@ $softest-pink: #EF88AD
   0%
     transform: scale(1)
     opacity: 1
-    box-shadow: 0 0 0 0 rgba($softest-pink, 0.6)
+    box-shadow: 0 0 0 0 rgba($text-base, 0.6)
   70%
     transform: scale(1.2)
     opacity: 0.8
-    box-shadow: 0 0 15px 5px rgba($softest-pink, 0)
+    box-shadow: 0 0 15px 5px rgba($text-base, 0)
   100%
     transform: scale(1)
     opacity: 1
-    box-shadow: 0 0 0 0 rgba($softest-pink, 0)
+    box-shadow: 0 0 0 0 rgba($text-base, 0)

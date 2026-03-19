@@ -5,6 +5,8 @@
 @use './styles/home'
 @use './styles/projects'
 
+*
+    box-sizing: border-box
 
 body, html
     font-family: 'Montserrat', sans-serif
@@ -12,41 +14,44 @@ body, html
     overflow: hidden
     margin: 0
     padding: 0
-    background-color: $hard-pink
+    background-color: $midnight-sea
     -webkit-tap-highlight-color: transparent
 
 ::selection
-    background-color: $softest-pink
-    color: $hard-pink
+    background-color: $branding-accent
+    color: $midnight-sea
 
 #app
     width: 100%
     height: 100%
 
-
-.background 
-    background: radial-gradient(circle at 50% -10%, $softest-pink 0%, $soft-pink 10%, rgba(0, 0, 0, 0) 25%)
+.background
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
     width: 100%
     height: 100%
-    position: absolute
     top: 0
     left: 0
-    animation: lamp 10s linear infinite
-   
+    background: radial-gradient(circle at 75% -5%, $lighter-sea 0%, $dark-sea 10%, rgba(0, 0, 0, 0) 50%)
+    background-size: cover
+    background-repeat: no-repeat
+    overflow: hidden
 
 .NF
     @extend %centerit
-    color: $softest-pink
+    color: $text-base
     text-align: center
-    gap: 5px
+    gap: $space-xs
     animation: showup 0.5s
     .head
         font-weight: 900
-        font-size: 2rem
+        font-size: $font-xl
         letter-spacing: 0.07em
     .sub
         font-weight: 400
-        font-size: 1.4rem
+        font-size: $font-lg
         letter-spacing: 0.05em
 
 .container
@@ -59,46 +64,21 @@ body, html
     height: 100%
     z-index: 1000
     overflow: hidden
-    
-.grain
-    background-image: url(@/assets/images/noise.png)
 
-.wave-con
-    display: flex
-    align-items: flex-end
-    flex-direction: column
-    justify-content: center
-
-
-.wave 
-    position: absolute
+.grain-overlay
+    position: fixed
+    top: 0
     left: 0
-    bottom: 0
     width: 100%
-    height: 100px
-    background: url(@/assets/images/wave.png)
-    filter: blur(10px)
-    background-size: 1000px 100px
-    
+    height: 100%
+    background-image: url(@/assets/images/noise.png)
+    pointer-events: none
+    z-index: 9999
 
-
-.wave#wave1
-    animation: waves 20s linear infinite
-    opacity: 0.8
-    bottom: 0
-    z-index: -997
-.wave#wave2
-    animation: wave-rev 15s linear infinite
-    opacity: 0.6
-    bottom: 10px
-    z-index: -998
-.wave#wave3
-    animation: waves 10s linear infinite
-    opacity: 0.4
-    bottom: 13px
-    z-index: -999
-.wave#wave4
-    animation: wave-rev 5s linear infinite
-    opacity: 0.2
-    bottom: 25px
-    z-index: -1000
+.ManaFlow
+    position: absolute
+    inset: 0
+    z-index: 2
+    display: flex
+    align-items: center
+    justify-content: center
