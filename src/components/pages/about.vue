@@ -6,7 +6,7 @@ import Paths from '../Icons/iconpaths'
 <template>
 
 <section class="home">
-<div class="logo">
+<div class="signature">
         <svg width="433" height="210" viewBox="0 0 43 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path :d="Paths.FdwZ"/>
 </svg>
