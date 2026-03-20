@@ -19,8 +19,8 @@ const waveLayers: WaveLayer[] = [
   {
     bottom: 100,
     height: 30,
-    amplitude: 20,
-    speed: 0.3,
+    amplitude: 10,
+    speed: 0.35,
     points: 4,
     svgHeight: 170,
   },
@@ -173,6 +173,8 @@ onUnmounted(() => {
   overflow: hidden
   filter: drop-shadow(0 0 5px $branding-accent)
   will-change: transform
+  content-visibility: auto
+  contain: layout style paint
 
   svg
     width: 100%
@@ -196,10 +198,10 @@ onUnmounted(() => {
   will-change: contents
 
 .wave-layer--back
-  filter: drop-shadow(0px -10px 6px $dark-sea)
+  filter: drop-shadow(0px -15px 10px $dark-sea)
 
 .wave-layer--front
-  filter: drop-shadow(0px -10px 6px $lighter-sea)
+  filter: drop-shadow(0px -15px 10px $lighter-sea)
 
 .wave-path-back
   fill: $dark-sea
