@@ -7,6 +7,8 @@
         width: clamp(320px, 70vw, 500px)
         height: auto
         filter: drop-shadow(0 0 0.625rem $text-base)
+        will-change: transform
+        transform: translateZ(0)
         path
             stroke-width: 0.6
             stroke-dasharray: 200
@@ -16,6 +18,8 @@
             stroke: $text-base
             stroke-linecap: round
             transform-origin: center
+            will-change: stroke-dashoffset, fill
+            transform: translateZ(0)
 
 .home
     @extend %centerit
