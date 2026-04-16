@@ -171,10 +171,8 @@ onUnmounted(() => {
   justify-content: center
   align-items: center
   overflow: hidden
-  filter: drop-shadow(0 0 5px $branding-accent)
+  opacity: .7
   will-change: transform
-  content-visibility: auto
-  contain: layout style paint
 
   svg
     width: 100%
